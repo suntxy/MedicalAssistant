@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="用药助手（Medication Assistant）技术支持页面，提供常见问题解答、使用帮助与联系方式。">
+  <title>技术支持 - 用药助手 Medication Assistant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-cream: #FAF9F6;
+      --bg-paper: #FFFFFF;
+      --ink-primary: #2C333A;
+      --ink-secondary: #5E6875;
+      --ink-muted: #8C96A3;
+      --sage: #6B8E7B;
+      --sage-light: #E8F0EC;
+      --sage-dark: #4A6B5C;
+      --amber: #C4A35A;
+      --amber-light: #F5EFE3;
+      --shadow-soft: 0 4px 24px rgba(44, 51, 58, 0.06);
+      --shadow-hover: 0 8px 40px rgba(44, 51, 58, 0.1);
+      --radius: 18px;
+      --radius-sm: 10px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+      background: var(--bg-cream);
+      color: var(--ink-primary);
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* 装饰背景 */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 10% 20%, rgba(107, 142, 123, 0.06) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(196, 163, 90, 0.05) 0%, transparent 40%);
+      z-index: -1;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 64px 24px 80px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 56px;
+      animation: fadeUp 0.8s ease-out both;
+    }
+
+    .app-icon {
+      width: 88px;
+      height: 88px;
+      margin: 0 auto 24px;
+      background: linear-gradient(135deg, var(--sage) 0%, var(--sage-dark) 100%);
+      border-radius: 22px;
+      display: grid;
+      place-items: center;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .app-icon svg {
+      width: 44px;
+      height: 44px;
+      color: #fff;
+    }
+
+    h1 {
+      font-family: "Noto Serif SC", "Songti SC", serif;
+      font-size: 2.25rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      color: var(--ink-secondary);
+      font-size: 1.05rem;
+      font-weight: 300;
+    }
+
+    .card {
+      background: var(--bg-paper);
+      border-radius: var(--radius);
+      padding: 32px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-soft);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: fadeUp 0.8s ease-out both;
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .card:nth-child(2) { animation-delay: 0.1s; }
+    .card:nth-child(3) { animation-delay: 0.2s; }
+    .card:nth-child(4) { animation-delay: 0.3s; }
+    .card:nth-child(5) { animation-delay: 0.4s; }
+
+    h2 {
+      font-family: "Noto Serif SC", "Songti SC", serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    h2 .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--sage);
+    }
+
+    p {
+      color: var(--ink-secondary);
+      margin-bottom: 14px;
+    }
+
+    .contact-grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 18px;
+      background: var(--sage-light);
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      color: var(--sage-dark);
+      font-weight: 500;
+      transition: background 0.2s ease;
+    }
+
+    .contact-item:hover {
+      background: #DCE8E2;
+    }
+
+    .contact-item svg {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+    }
+
+    .contact-item .meta {
+      font-size: 0.85rem;
+      color: var(--ink-muted);
+      font-weight: 400;
+      margin-top: 2px;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #F0EFEC;
+      padding: 22px 0;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .faq-item:first-child {
+      padding-top: 0;
+    }
+
+    .faq-question {
+      font-weight: 600;
+      color: var(--ink-primary);
+      margin-bottom: 8px;
+      font-size: 1.02rem;
+    }
+
+    .faq-answer {
+      color: var(--ink-secondary);
+      font-size: 0.98rem;
+    }
+
+    .steps {
+      counter-reset: step;
+      list-style: none;
+    }
+
+    .steps li {
+      position: relative;
+      padding-left: 42px;
+      margin-bottom: 18px;
+      color: var(--ink-secondary);
+    }
+
+    .steps li::before {
+      counter-increment: step;
+      content: counter(step);
+      position: absolute;
+      left: 0;
+      top: 2px;
+      width: 26px;
+      height: 26px;
+      background: var(--amber-light);
+      color: var(--amber);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      background: var(--sage-light);
+      color: var(--sage-dark);
+      margin-right: 8px;
+      margin-bottom: 8px;
+    }
+
+    .notice {
+      background: var(--amber-light);
+      border-left: 4px solid var(--amber);
+      padding: 16px 20px;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      color: var(--ink-secondary);
+      font-size: 0.95rem;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 48px;
+      color: var(--ink-muted);
+      font-size: 0.88rem;
+      animation: fadeUp 0.8s ease-out 0.5s both;
+    }
+
+    footer a {
+      color: var(--sage-dark);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 40px 18px 56px;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      .card {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="app-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M8 21h8a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2z"></path>
+          <path d="M12 11v.01"></path>
+          <path d="M12 8v.01"></path>
+          <path d="M12 14v.01"></path>
+        </svg>
+      </div>
+      <h1>用药助手</h1>
+      <p class="subtitle">Medication Assistant · 极简 iOS 用药提醒与健康管理工具</p>
+    </header>
+
+    <section class="card">
+      <h2><span class="dot"></span>联系我们</h2>
+      <p>如果在使用过程中遇到任何问题，或有功能建议，欢迎通过以下方式与我们联系。我们会在 1–2 个工作日内回复。</p>
+      <div class="contact-grid">
+        <!-- TODO: 请将下方邮箱替换为您的真实技术支持邮箱，以便 Apple 审核与用户使用。 -->
+        <a class="contact-item" href="mailto:support@example.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+          </svg>
+          <div>
+            <div>技术支持邮箱</div>
+            <div class="meta">sunadrian@foxmail.com</div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2><span class="dot"></span>常见问题</h2>
+
+      <div class="faq-item">
+        <div class="faq-question">为什么收不到用药提醒通知？</div>
+        <div class="faq-answer">
+          请依次检查：① 打开 iPhone「设置」→「通知」→「用药助手」，确认「允许通知」已开启；② 在 App 内添加了药品并设置了提醒时间；③ 未开启「勿扰模式」或「屏幕使用时间」中的通知限制。首次启动时系统会请求通知权限，如之前拒绝，需在系统设置中重新开启。
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">数据会丢失吗？可以备份吗？</div>
+        <div class="faq-answer">
+          目前所有数据均保存在设备本地的 UserDefaults 中，卸载 App 后数据会被清除。建议定期截图保存重要的用药记录。后续版本将考虑接入 iCloud 同步与本地导出功能。
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">如何添加或修改药品？</div>
+        <div class="faq-answer">
+          在首页点击右下角「+」按钮，填写药品名称、剂量、服用时间和有效期即可添加。点击已有药品进入详情页，可编辑信息或暂停/启用该药品的提醒。
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">App 是否需要联网？</div>
+        <div class="faq-answer">
+          不需要。用药助手为纯本地应用，不收集、不上传任何个人数据，所有信息均存储在您的设备上。
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">支持哪些 iOS 版本？</div>
+        <div class="faq-answer">
+          当前版本支持 iOS 16.0 及以上系统。推荐在 iOS 17 或更高版本上获得最佳体验。
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2><span class="dot"></span>故障排查</h2>
+      <p>遇到以下情况时，可尝试按步骤解决：</p>
+      <ol class="steps">
+        <li><strong>App 闪退或卡顿：</strong>尝试从后台彻底关闭 App 后重新打开，或重启设备。</li>
+        <li><strong>提醒时间不准确：</strong>检查系统时区与日期时间设置是否正确，并重新进入药品详情页确认提醒时间。</li>
+        <li><strong>打卡记录未显示：</strong>下拉首页刷新数据；如问题持续，请检查是否为同一天内重复打卡导致的显示过滤。</li>
+        <li><strong>通知静音：</strong>确认设备未开启静音模式，且通知音量已调高。</li>
+      </ol>
+      <div class="notice" style="margin-top: 12px;">
+        若以上方法无法解决问题，请通过上方邮箱联系我们，并尽量描述设备型号、iOS 版本与问题发生的步骤，便于我们快速定位。
+      </div>
+    </section>
+
+    <section class="card">
+      <h2><span class="dot"></span>隐私说明</h2>
+      <p>我们非常重视您的隐私：</p>
+      <div style="margin-top: 8px;">
+        <span class="tag">无网络请求</span>
+        <span class="tag">不上传数据</span>
+        <span class="tag">本地存储</span>
+        <span class="tag">无广告</span>
+      </div>
+      <p style="margin-top: 16px;">用药助手不会读取您的通讯录、位置、相册等敏感权限，仅使用系统本地通知服务发送用药提醒。</p>
+    </section>
+
+    <section class="card">
+      <h2><span class="dot"></span>系统要求</h2>
+      <ul style="list-style: none; color: var(--ink-secondary);">
+        <li style="margin-bottom: 10px;">📱 iPhone / iPod touch 运行 iOS 16.0 或更高版本</li>
+        <li style="margin-bottom: 10px;">💾 需要开启通知权限以接收用药提醒</li>
+        <li>🌐 无需网络连接即可使用全部功能</li>
+      </ul>
+    </section>
+
+    <footer>
+      <p>© 2026 用药助手 Medication Assistant. 保留所有权利。</p>
+      <p style="margin-top: 6px;">本页面为 App Store 审核及用户技术支持使用。</p>
+    </footer>
+  </div>
+</body>
+</html>
