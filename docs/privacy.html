@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="用药助手（Medication Assistant）隐私政策，说明本应用不收集任何用户数据。">
+  <title>隐私政策 - 用药助手 Medication Assistant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-warm: #F8F7F4;
+      --bg-paper: #FFFFFF;
+      --ink-primary: #2A3036;
+      --ink-secondary: #59626D;
+      --ink-muted: #8A94A0;
+      --sage: #5F8574;
+      --sage-light: #E5EEEA;
+      --sage-dark: #3E5D4F;
+      --ochre: #B08D55;
+      --ochre-light: #F2EBDD;
+      --shadow: 0 2px 20px rgba(42, 48, 54, 0.05);
+      --radius: 16px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+      background: var(--bg-warm);
+      color: var(--ink-primary);
+      line-height: 1.85;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 0% 0%, rgba(95, 133, 116, 0.05) 0%, transparent 45%),
+        radial-gradient(circle at 100% 100%, rgba(176, 141, 85, 0.04) 0%, transparent 45%);
+      z-index: -1;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 72px 24px 96px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 48px;
+      animation: fadeIn 0.8s ease-out both;
+    }
+
+    .seal {
+      width: 76px;
+      height: 76px;
+      margin: 0 auto 22px;
+      background: var(--bg-paper);
+      border: 2px solid var(--sage-light);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      box-shadow: var(--shadow);
+    }
+
+    .seal svg {
+      width: 34px;
+      height: 34px;
+      color: var(--sage);
+    }
+
+    h1 {
+      font-family: "Noto Serif SC", "Songti SC", serif;
+      font-size: 2.1rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      color: var(--ink-secondary);
+      font-size: 0.98rem;
+      font-weight: 400;
+    }
+
+    .effective-date {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 18px;
+      padding: 8px 18px;
+      background: var(--ochre-light);
+      color: var(--ochre);
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    article {
+      background: var(--bg-paper);
+      border-radius: var(--radius);
+      padding: 42px;
+      box-shadow: var(--shadow);
+      animation: fadeIn 0.8s ease-out 0.15s both;
+    }
+
+    section {
+      margin-bottom: 36px;
+    }
+
+    section:last-child {
+      margin-bottom: 0;
+    }
+
+    h2 {
+      font-family: "Noto Serif SC", "Songti SC", serif;
+      font-size: 1.18rem;
+      font-weight: 600;
+      color: var(--sage-dark);
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--sage-light);
+    }
+
+    p, li {
+      color: var(--ink-secondary);
+      margin-bottom: 12px;
+      font-size: 0.98rem;
+    }
+
+    ul {
+      list-style: none;
+      margin: 14px 0;
+    }
+
+    ul li {
+      position: relative;
+      padding-left: 24px;
+    }
+
+    ul li::before {
+      content: "";
+      position: absolute;
+      left: 6px;
+      top: 12px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--sage);
+    }
+
+    strong {
+      color: var(--ink-primary);
+      font-weight: 600;
+    }
+
+    .highlight-box {
+      background: var(--sage-light);
+      border-left: 4px solid var(--sage);
+      padding: 18px 22px;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      margin: 18px 0;
+    }
+
+    .highlight-box p {
+      margin-bottom: 0;
+      color: var(--sage-dark);
+      font-weight: 500;
+    }
+
+    .contact-block {
+      background: var(--ochre-light);
+      border-radius: var(--radius);
+      padding: 22px 26px;
+      margin-top: 18px;
+    }
+
+    .contact-block a {
+      color: var(--ochre);
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s ease;
+    }
+
+    .contact-block a:hover {
+      border-bottom-color: currentColor;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 48px;
+      color: var(--ink-muted);
+      font-size: 0.85rem;
+      animation: fadeIn 0.8s ease-out 0.3s both;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(14px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 48px 18px 64px;
+      }
+
+      article {
+        padding: 28px;
+      }
+
+      h1 {
+        font-size: 1.7rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="seal" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          <path d="m9 12 2 2 4-4"></path>
+        </svg>
+      </div>
+      <h1>隐私政策</h1>
+      <p class="subtitle">用药助手 Medication Assistant</p>
+      <div class="effective-date">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 2px;">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        生效日期：2026 年 6 月 18 日
+      </div>
+    </header>
+
+    <article>
+      <section>
+        <h2>1. 引言</h2>
+        <p>用药助手（以下简称「本 App」）尊重并保护所有用户的个人隐私权。本隐私政策旨在向您说明：在使用本 App 的过程中，我们如何收集、使用、存储和保护您的个人信息。</p>
+        <div class="highlight-box">
+          <p>重要提示：本 App 为纯本地应用，不收集、不上传、不共享任何用户个人数据。</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>2. 我们收集的信息</h2>
+        <p>本 App <strong>不会收集任何个人信息</strong>，包括但不限于：</p>
+        <ul>
+          <li>姓名、手机号、电子邮箱、住址等身份联系信息</li>
+          <li>设备标识符、IP 地址、地理位置信息</li>
+          <li>使用行为数据、崩溃日志或分析数据</li>
+          <li>通讯录、相册、麦克风、相机等敏感权限信息</li>
+        </ul>
+        <p>您在本 App 中输入的药品名称、剂量、服用时间、打卡记录等所有数据，均仅保存在您的设备本地存储（UserDefaults）中。</p>
+      </section>
+
+      <section>
+        <h2>3. 信息用途</h2>
+        <p>由于本 App 不收集任何用户数据，因此不存在将数据用于以下或其他目的的情形：</p>
+        <ul>
+          <li>用户画像、广告投放或商业推广</li>
+          <li>数据出售、共享给第三方</li>
+          <li>跨应用或跨设备的数据追踪</li>
+        </ul>
+        <p>本 App 仅使用 iOS 系统提供的本地通知服务，在您设定的时间向您发送用药提醒。通知内容完全由您在设备本地配置，不会离开您的设备。</p>
+      </section>
+
+      <section>
+        <h2>4. 第三方服务</h2>
+        <p>本 App 未集成任何第三方统计、广告、社交或云服务 SDK，也不会调用任何外部网络接口。所有功能均在设备本地完成。</p>
+      </section>
+
+      <section>
+        <h2>5. 数据安全</h2>
+        <p>您的数据由 iOS 系统安全沙盒机制保护，其他应用无法直接访问。但请注意：</p>
+        <ul>
+          <li>数据仅保存在当前设备上，未进行云端备份；</li>
+          <li>卸载本 App 后，本地存储的所有数据将被系统清除；</li>
+          <li>请妥善保管您的设备，避免他人未经授权访问。</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>6. 儿童隐私</h2>
+        <p>本 App 不涉及任何面向儿童的内容或服务，亦不会故意收集 13 岁以下儿童的个人信息。</p>
+      </section>
+
+      <section>
+        <h2>7. 政策更新</h2>
+        <p>我们可能会根据法律法规或功能变化适时更新本隐私政策。更新后的政策将在本页面发布，并以页面顶部标注的「生效日期」为准。建议您定期查阅本页面，以了解最新的隐私保护措施。</p>
+      </section>
+
+      <section>
+        <h2>8. 联系我们</h2>
+        <p>如您对本隐私政策有任何疑问、意见或建议，欢迎通过以下方式与我们联系：</p>
+        <div class="contact-block">
+          <!-- TODO: 请将下方邮箱替换为您的真实联系邮箱。 -->
+          <p>技术支持邮箱：<a href="mailto:sunadrian@foxmail.com">sunadrian@foxmail.com</a></p>
+        </div>
+      </section>
+    </article>
+
+    <footer>
+      <p>© 2026 用药助手 Medication Assistant. 保留所有权利。</p>
+    </footer>
+  </div>
+</body>
+</html>
