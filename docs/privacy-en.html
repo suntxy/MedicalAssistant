@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Medication Assistant privacy policy, explaining that this app does not collect any user data.">
+  <title>Privacy Policy - Medication Assistant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-warm: #F8F7F4;
+      --bg-paper: #FFFFFF;
+      --ink-primary: #2A3036;
+      --ink-secondary: #59626D;
+      --ink-muted: #8A94A0;
+      --sage: #5F8574;
+      --sage-light: #E5EEEA;
+      --sage-dark: #3E5D4F;
+      --ochre: #B08D55;
+      --ochre-light: #F2EBDD;
+      --shadow: 0 2px 20px rgba(42, 48, 54, 0.05);
+      --radius: 16px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+      background: var(--bg-warm);
+      color: var(--ink-primary);
+      line-height: 1.85;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 0% 0%, rgba(95, 133, 116, 0.05) 0%, transparent 45%),
+        radial-gradient(circle at 100% 100%, rgba(176, 141, 85, 0.04) 0%, transparent 45%);
+      z-index: -1;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 72px 24px 96px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 48px;
+      animation: fadeIn 0.8s ease-out both;
+    }
+
+    .seal {
+      width: 76px;
+      height: 76px;
+      margin: 0 auto 22px;
+      background: var(--bg-paper);
+      border: 2px solid var(--sage-light);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      box-shadow: var(--shadow);
+    }
+
+    .seal svg {
+      width: 34px;
+      height: 34px;
+      color: var(--sage);
+    }
+
+    h1 {
+      font-family: "Noto Serif SC", "Songti SC", serif;
+      font-size: 2.1rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      color: var(--ink-secondary);
+      font-size: 0.98rem;
+      font-weight: 400;
+    }
+
+    .effective-date {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 18px;
+      padding: 8px 18px;
+      background: var(--ochre-light);
+      color: var(--ochre);
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    article {
+      background: var(--bg-paper);
+      border-radius: var(--radius);
+      padding: 42px;
+      box-shadow: var(--shadow);
+      animation: fadeIn 0.8s ease-out 0.15s both;
+    }
+
+    section {
+      margin-bottom: 36px;
+    }
+
+    section:last-child {
+      margin-bottom: 0;
+    }
+
+    h2 {
+      font-family: "Noto Serif SC", "Songti SC", serif;
+      font-size: 1.18rem;
+      font-weight: 600;
+      color: var(--sage-dark);
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--sage-light);
+    }
+
+    p, li {
+      color: var(--ink-secondary);
+      margin-bottom: 12px;
+      font-size: 0.98rem;
+    }
+
+    ul {
+      list-style: none;
+      margin: 14px 0;
+    }
+
+    ul li {
+      position: relative;
+      padding-left: 24px;
+    }
+
+    ul li::before {
+      content: "";
+      position: absolute;
+      left: 6px;
+      top: 12px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--sage);
+    }
+
+    strong {
+      color: var(--ink-primary);
+      font-weight: 600;
+    }
+
+    .highlight-box {
+      background: var(--sage-light);
+      border-left: 4px solid var(--sage);
+      padding: 18px 22px;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      margin: 18px 0;
+    }
+
+    .highlight-box p {
+      margin-bottom: 0;
+      color: var(--sage-dark);
+      font-weight: 500;
+    }
+
+    .contact-block {
+      background: var(--ochre-light);
+      border-radius: var(--radius);
+      padding: 22px 26px;
+      margin-top: 18px;
+    }
+
+    .contact-block a {
+      color: var(--ochre);
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s ease;
+    }
+
+    .contact-block a:hover {
+      border-bottom-color: currentColor;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 48px;
+      color: var(--ink-muted);
+      font-size: 0.85rem;
+      animation: fadeIn 0.8s ease-out 0.3s both;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(14px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 48px 18px 64px;
+      }
+
+      article {
+        padding: 28px;
+      }
+
+      h1 {
+        font-size: 1.7rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="seal" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          <path d="m9 12 2 2 4-4"></path>
+        </svg>
+      </div>
+      <h1>Privacy Policy</h1>
+      <p class="subtitle">Medication Assistant</p>
+      <div class="effective-date">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 2px;">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        Effective Date: June 18, 2026
+      </div>
+    </header>
+
+    <article>
+      <section>
+        <h2>1. Introduction</h2>
+        <p>Medication Assistant ("the App") respects and protects the personal privacy of all users. This privacy policy explains how we collect, use, store, and protect your personal information while you use the App.</p>
+        <div class="highlight-box">
+          <p>Important: The App is a fully offline application. It does not collect, upload, or share any personal user data.</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>2. Information We Collect</h2>
+        <p>The App <strong>does not collect any personal information</strong>, including but not limited to:</p>
+        <ul>
+          <li>Identity or contact details such as name, phone number, email address, or home address</li>
+          <li>Device identifiers, IP addresses, or geolocation data</li>
+          <li>Usage behavior data, crash logs, or analytics data</li>
+          <li>Sensitive permission data such as contacts, photos, microphone, or camera</li>
+        </ul>
+        <p>All data you enter in the App — medication names, dosages, schedule times, and check-in records — is stored only in your device's local storage (UserDefaults).</p>
+      </section>
+
+      <section>
+        <h2>3. How Information Is Used</h2>
+        <p>Because the App does not collect any user data, there is no scenario in which data is used for the following or any other purposes:</p>
+        <ul>
+          <li>User profiling, advertising, or commercial promotion</li>
+          <li>Selling or sharing data with third parties</li>
+          <li>Cross-app or cross-device tracking</li>
+        </ul>
+        <p>The App only uses the local notification service provided by iOS to send you medication reminders at the times you set. Notification content is configured entirely on your device and never leaves it.</p>
+      </section>
+
+      <section>
+        <h2>4. Third-Party Services</h2>
+        <p>The App does not integrate any third-party analytics, advertising, social, or cloud service SDKs, and it does not call any external network APIs. All features run locally on your device.</p>
+      </section>
+
+      <section>
+        <h2>5. Data Security</h2>
+        <p>Your data is protected by the iOS system sandbox, so other apps cannot access it directly. However, please note:</p>
+        <ul>
+          <li>Data is stored only on your current device and is not backed up to the cloud;</li>
+          <li>Deleting the App removes all locally stored data;</li>
+          <li>Please keep your device secure to prevent unauthorized access by others.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>6. Children's Privacy</h2>
+        <p>The App does not contain any content or services directed at children, and it does not knowingly collect personal information from children under the age of 13.</p>
+      </section>
+
+      <section>
+        <h2>7. Policy Updates</h2>
+        <p>We may update this privacy policy from time to time in response to changes in laws, regulations, or app features. Updated versions will be published on this page, and the "Effective Date" shown at the top of the page will apply. We recommend checking this page periodically to stay informed about the latest privacy practices.</p>
+      </section>
+
+      <section>
+        <h2>8. Contact Us</h2>
+        <p>If you have any questions, comments, or suggestions about this privacy policy, feel free to contact us:</p>
+        <div class="contact-block">
+          <!-- TODO: Please replace the email below with your real contact email. -->
+          <p>Support Email: <a href="mailto:sunadrian@foxmail.com">sunadrian@foxmail.com</a></p>
+        </div>
+      </section>
+    </article>
+
+    <footer>
+      <p>© 2026 Medication Assistant. All rights reserved.</p>
+    </footer>
+  </div>
+</body>
+</html>

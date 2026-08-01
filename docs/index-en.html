@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Medication Assistant support page, with frequently asked questions, usage help, and contact information.">
+  <title>Support - Medication Assistant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-cream: #FAF9F6;
+      --bg-paper: #FFFFFF;
+      --ink-primary: #2C333A;
+      --ink-secondary: #5E6875;
+      --ink-muted: #8C96A3;
+      --sage: #6B8E7B;
+      --sage-light: #E8F0EC;
+      --sage-dark: #4A6B5C;
+      --amber: #C4A35A;
+      --amber-light: #F5EFE3;
+      --shadow-soft: 0 4px 24px rgba(44, 51, 58, 0.06);
+      --shadow-hover: 0 8px 40px rgba(44, 51, 58, 0.1);
+      --radius: 18px;
+      --radius-sm: 10px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+      background: var(--bg-cream);
+      color: var(--ink-primary);
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Decorative background */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 10% 20%, rgba(107, 142, 123, 0.06) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(196, 163, 90, 0.05) 0%, transparent 40%);
+      z-index: -1;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 64px 24px 80px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 56px;
+      animation: fadeUp 0.8s ease-out both;
+    }
+
+    .app-icon {
+      width: 88px;
+      height: 88px;
+      margin: 0 auto 24px;
+      background: linear-gradient(135deg, var(--sage) 0%, var(--sage-dark) 100%);
+      border-radius: 22px;
+      display: grid;
+      place-items: center;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .app-icon svg {
+      width: 44px;
+      height: 44px;
+      color: #fff;
+    }
+
+    h1 {
+      font-family: "Noto Serif SC", "Songti SC", serif;
+      font-size: 2.25rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      color: var(--ink-secondary);
+      font-size: 1.05rem;
+      font-weight: 300;
+    }
+
+    .card {
+      background: var(--bg-paper);
+      border-radius: var(--radius);
+      padding: 32px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-soft);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: fadeUp 0.8s ease-out both;
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .card:nth-child(2) { animation-delay: 0.1s; }
+    .card:nth-child(3) { animation-delay: 0.2s; }
+    .card:nth-child(4) { animation-delay: 0.3s; }
+    .card:nth-child(5) { animation-delay: 0.4s; }
+
+    h2 {
+      font-family: "Noto Serif SC", "Songti SC", serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    h2 .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--sage);
+    }
+
+    p {
+      color: var(--ink-secondary);
+      margin-bottom: 14px;
+    }
+
+    .contact-grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 18px;
+      background: var(--sage-light);
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      color: var(--sage-dark);
+      font-weight: 500;
+      transition: background 0.2s ease;
+    }
+
+    .contact-item:hover {
+      background: #DCE8E2;
+    }
+
+    .contact-item svg {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+    }
+
+    .contact-item .meta {
+      font-size: 0.85rem;
+      color: var(--ink-muted);
+      font-weight: 400;
+      margin-top: 2px;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #F0EFEC;
+      padding: 22px 0;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .faq-item:first-child {
+      padding-top: 0;
+    }
+
+    .faq-question {
+      font-weight: 600;
+      color: var(--ink-primary);
+      margin-bottom: 8px;
+      font-size: 1.02rem;
+    }
+
+    .faq-answer {
+      color: var(--ink-secondary);
+      font-size: 0.98rem;
+    }
+
+    .steps {
+      counter-reset: step;
+      list-style: none;
+    }
+
+    .steps li {
+      position: relative;
+      padding-left: 42px;
+      margin-bottom: 18px;
+      color: var(--ink-secondary);
+    }
+
+    .steps li::before {
+      counter-increment: step;
+      content: counter(step);
+      position: absolute;
+      left: 0;
+      top: 2px;
+      width: 26px;
+      height: 26px;
+      background: var(--amber-light);
+      color: var(--amber);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      background: var(--sage-light);
+      color: var(--sage-dark);
+      margin-right: 8px;
+      margin-bottom: 8px;
+    }
+
+    .notice {
+      background: var(--amber-light);
+      border-left: 4px solid var(--amber);
+      padding: 16px 20px;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      color: var(--ink-secondary);
+      font-size: 0.95rem;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 48px;
+      color: var(--ink-muted);
+      font-size: 0.88rem;
+      animation: fadeUp 0.8s ease-out 0.5s both;
+    }
+
+    footer a {
+      color: var(--sage-dark);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 40px 18px 56px;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      .card {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="app-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M8 21h8a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2z"></path>
+          <path d="M12 11v.01"></path>
+          <path d="M12 8v.01"></path>
+          <path d="M12 14v.01"></path>
+        </svg>
+      </div>
+      <h1>Medication Assistant</h1>
+      <p class="subtitle">A minimalist iOS medication reminder and health management tool</p>
+    </header>
+
+    <section class="card">
+      <h2><span class="dot"></span>Contact Us</h2>
+      <p>If you run into any issues while using the app, or have feature suggestions, feel free to reach out through the channel below. We usually reply within 1–2 business days.</p>
+      <div class="contact-grid">
+        <!-- TODO: Please replace the email below with your real support email for App Review and users. -->
+        <a class="contact-item" href="mailto:sunadrian@foxmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+          </svg>
+          <div>
+            <div>Support Email</div>
+            <div class="meta">sunadrian@foxmail.com</div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2><span class="dot"></span>FAQ</h2>
+
+      <div class="faq-item">
+        <div class="faq-question">Why am I not receiving medication reminders?</div>
+        <div class="faq-answer">
+          Please check the following: ① Open iPhone Settings → Notifications → Medication Assistant and make sure Allow Notifications is turned on; ② You have added a medication in the app and set reminder times; ③ Do Not Disturb / Focus mode or Screen Time notification limits are not blocking alerts. The system requests notification permission on first launch; if you previously denied it, you need to re-enable it in system Settings.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Will my data be lost? Can I back it up?</div>
+        <div class="faq-answer">
+          All data is currently stored locally on your device in UserDefaults, and it is removed if you delete the app. We recommend taking screenshots of important medication records regularly. iCloud sync and local export are being considered for future versions.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">How do I add or edit a medication?</div>
+        <div class="faq-answer">
+          Tap the "+" button at the bottom right of the home screen, then fill in the medication name, dosage, schedule times, and duration. Tap an existing medication to open its detail page, where you can edit its information or pause/resume its reminders.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Does the app require an internet connection?</div>
+        <div class="faq-answer">
+          No. Medication Assistant is a fully offline app. It does not collect or upload any personal data — everything stays on your device.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Which iOS versions are supported?</div>
+        <div class="faq-answer">
+          The current version supports iOS 16.0 and later. For the best experience, we recommend iOS 17 or newer.
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2><span class="dot"></span>Troubleshooting</h2>
+      <p>If you encounter the following issues, try these steps:</p>
+      <ol class="steps">
+        <li><strong>App crashes or stutters:</strong> Fully close the app from the app switcher and reopen it, or restart your device.</li>
+        <li><strong>Reminder times are inaccurate:</strong> Check that your system time zone and date & time settings are correct, then re-open the medication detail page to confirm the reminder times.</li>
+        <li><strong>Check-in records not showing:</strong> Pull down on the home screen to refresh; if the issue persists, check whether duplicate check-ins on the same day are being filtered.</li>
+        <li><strong>Notifications are silent:</strong> Make sure the device is not in silent mode and the notification volume is turned up.</li>
+      </ol>
+      <div class="notice" style="margin-top: 12px;">
+        If none of the above solves your problem, please contact us via the email above and include your device model, iOS version, and the steps to reproduce the issue, so we can locate it quickly.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2><span class="dot"></span>Privacy</h2>
+      <p>We take your privacy very seriously:</p>
+      <div style="margin-top: 8px;">
+        <span class="tag">No network requests</span>
+        <span class="tag">No data uploads</span>
+        <span class="tag">Local storage only</span>
+        <span class="tag">No ads</span>
+      </div>
+      <p style="margin-top: 16px;">Medication Assistant does not access sensitive permissions such as your contacts, location, or photo library. It only uses the system's local notification service to send medication reminders.</p>
+    </section>
+
+    <section class="card">
+      <h2><span class="dot"></span>System Requirements</h2>
+      <ul style="list-style: none; color: var(--ink-secondary);">
+        <li style="margin-bottom: 10px;">📱 iPhone / iPod touch running iOS 16.0 or later</li>
+        <li style="margin-bottom: 10px;">💾 Notification permission required to receive medication reminders</li>
+        <li>🌐 All features work without an internet connection</li>
+      </ul>
+    </section>
+
+    <footer>
+      <p>© 2026 Medication Assistant. All rights reserved.</p>
+      <p style="margin-top: 6px;">This page is provided for App Store review and user support.</p>
+    </footer>
+  </div>
+</body>
+</html>
