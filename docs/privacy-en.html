@@ -249,7 +249,7 @@
           <line x1="8" y1="2" x2="8" y2="6"></line>
           <line x1="3" y1="10" x2="21" y2="10"></line>
         </svg>
-        Effective Date: June 18, 2026
+        Effective Date: September 28, 2026
       </div>
     </header>
 
@@ -258,7 +258,7 @@
         <h2>1. Introduction</h2>
         <p>ChronoCure ("the App") respects and protects the personal privacy of all users. This privacy policy explains how we collect, use, store, and protect your personal information while you use the App.</p>
         <div class="highlight-box">
-          <p>Important: The App is a fully offline application. It does not collect, upload, or share any personal user data.</p>
+          <p>Important: The App itself is a fully offline application and does not collect, upload, or share any personal user data. Banner ads served by Google AdMob are shown only outside the China storefront (see Section 4); any ad-related data is processed by Google under its own privacy policy. No ads are shown in the China storefront.</p>
         </div>
       </section>
 
@@ -273,7 +273,9 @@
         </ul>
         <p>All data you enter in the App — medication names, dosages, schedule times, check-in records, as well as diseases, checkup plans, and checkup records — is stored only in your device's local storage (UserDefaults). Checkup photos are kept in the App's private sandbox directory and are excluded from iCloud/iTunes device backups.</p>
         <p>The App offers an optional iCloud backup and restore feature: when you are signed in to iCloud and use it, the data above together with your checkup photos is stored as a backup package in <strong>your own iCloud Drive</strong>. The backup is carried and transmitted by Apple's iCloud service, is visible only to you, and cannot be accessed, retrieved, or read by the developer in any way. "Export Data" is a system share action initiated by you, and you decide where the exported content goes.</p>
-        <p>Premium subscription purchases, trials, and renewals are processed entirely by the Apple App Store. The App never accesses or stores your payment information; we only learn from the App Store whether your subscription is active.</p>
+        <p>The App offers an optional "Family Care" feature (off by default; it must be turned on by you in the App): once enabled, the App writes a <strong>daily check-in status snapshot</strong> (medication names, scheduled times, and check-in status, plus the status of checkup items only if you authorize sharing them; dosage notes and checkup photos are never included) into the private database of your own iCloud account, and shares it via Apple's CloudKit sharing (CKShare) mechanism with <strong>read-only</strong> access granted solely to family members you personally invite. This data is transmitted encrypted by Apple's services between your and your family members' iCloud accounts; the developer operates no servers and cannot access any of it. The "evening missed check-in reminder" on a family member's device is generated locally on that device from the synced snapshots. You can stop sharing at any time in the App: once stopped, the shared cloud data is deleted and family members immediately lose access.</p>
+        <p>Premium subscription purchases, trials, and renewals are processed entirely by the Apple App Store. The App never accesses or stores your payment information; we only learn from the App Store whether your subscription is active. Outside the China storefront, the subscription is only used to remove ads — all features of the App are free to use.</p>
+        <p>Regarding ads (non-China storefronts only): the App itself still does not collect any of your data; however, banner ads shown outside the China storefront are served by Google AdMob, and Google may collect device identifiers and similar data for ad delivery under its own privacy policy — see "4. Third-Party Services and Ads". In the China storefront, no advertising SDK is loaded and no ad-related data exchange occurs.</p>
       </section>
 
       <section>
@@ -284,12 +286,25 @@
           <li>Selling or sharing data with third parties</li>
           <li>Cross-app or cross-device tracking</li>
         </ul>
+        <p>Note: ad delivery outside the China storefront is handled independently by Google AdMob; see "4. Third-Party Services and Ads" for its data practices.</p>
         <p>The App only uses the local notification service provided by iOS to send you medication and checkup reminders at the times you set. Notification content is configured entirely on your device and never leaves it.</p>
       </section>
 
       <section>
-        <h2>4. Third-Party Services</h2>
-        <p>The App does not integrate any third-party analytics, advertising, social, or cloud service SDKs, and it does not call any external network APIs. All features run locally on your device; the optional iCloud backup is transmitted by Apple's system-level iCloud service, which is not a third-party service, and the developer operates no servers of its own.</p>
+        <h2>4. Third-Party Services and Ads</h2>
+        <p>The App operates in two modes based on your App Store storefront region:</p>
+        <ul>
+          <li><strong>China storefront</strong>: no ads are shown and no advertising SDK is loaded;</li>
+          <li><strong>Non-China storefronts</strong>: all features are free to use, and banner ads are served via Google AdMob; a Premium subscription removes all ads.</li>
+        </ul>
+        <p>Ads are shown only to users outside the China storefront, with the following details:</p>
+        <ul>
+          <li>Ads are provided by <strong>Google AdMob</strong> (Google Mobile Ads SDK), together with Google's User Messaging Platform (UMP) to obtain your consent where required by GDPR and similar regulations;</li>
+          <li>Ads may only use the device identifier for personalization after you grant permission via the system's App Tracking Transparency (ATT) prompt; declining does not affect any app functionality, and you will still receive non-personalized ads;</li>
+          <li>A Premium subscription removes all ads from the App;</li>
+          <li>Ad-related data (such as device identifiers and ad interactions) is collected directly by Google and processed under its privacy policy; the developer of this App neither receives nor stores such data. Google's privacy policy: <a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a>.</li>
+        </ul>
+        <p>Apart from the advertising SDK described above, the App does not integrate any third-party analytics, social, or cloud service SDKs. The optional iCloud backup and "Family Care" sharing are transmitted by Apple's system-level iCloud/CloudKit services, which are not third-party services, and the developer operates no servers of its own. The Apple Watch companion app contains no ads.</p>
       </section>
 
       <section>
